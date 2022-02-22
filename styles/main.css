@@ -141,8 +141,16 @@ section {
     float: left;
 }
 
+#leftsidebar h2{
+    color: maroon;
+}
+
 #rightsidebar {
     float:right;
+}
+
+#rightsidebar h2{
+    color: maroon;
 }
 
 section a:link, section a:visited {
