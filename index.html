@@ -4,19 +4,49 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="discription" content="">
+
+	<!-- Viewport-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Stylesheet -->
 	<link rel="stylesheet" href="styles/normalize.css">
 	<link rel="stylesheet" href="styles/main.css">
+
+	<!-- favicon -->
 	<link rel="icon" href="images/favicon.ico">
+
+	<!-- Title-->
 	<title>Shape Up</title>
+
+	<!-- Slicknav-->
+	<link rel="stylesheet" href="styles/slicknav.css">
+
+	<!-- CjQuery CDN-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- local js slicknav script file-->
+	<script src="js/jquery.slicknav.min.js" ></script>
+
+	<!-- slicknav script-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#nav_menu').slicknav({prependTo:"#mobilemenu"});
+		});
+		</script>
+
 </head>
 
 <body>
 	<header class="clearfix">
-		<img class="logoimage" src= "images/shape_up_logo.png" alt="">
+		<a href="index.html"><img class="logoimage" src= "images/shape_up_logo.png" alt=""></a>
 		<h2>Shape Up!</h2>
 		<h3>Find the best fit for you</h3>
 	</header> 
 
+	<!-- slicknav nav tags -->
+	<nav id = "mobilemenu"></nav>
+
+	<!-- nav_menu - code for the header menu-->
 	<nav id="nav_menu">
 		<ul>
 			<li><a href="index.html">Home</a></li>
