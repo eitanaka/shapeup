@@ -1,4 +1,3 @@
-/* type selectors */
 * {
     margin: 0;
     padding: 0;
@@ -11,17 +10,17 @@ html{
 body {
      font-family: Arial, Helvetica, sans-serif;
      font-size: 100%;
-     max-width: 1200px;
+     max-width: 1024px; /* change from 1200px*/
      width: 100%;
      margin: 0 auto;
      border: 3px solid steelblue;
      box-shadow: 8px 10px 8px 10px black;
      background-color: white;
 }
-h1, h2, h3, p {
-    margin: 16px 0;
+h1, h2, h3, p, blockquote {
+    margin: .75em;
 }
-/* the style for the header*/
+
 header {
     border-bottom: 3px solid steelblue;
     background-image: 
@@ -36,7 +35,9 @@ header h2 {
 }
 .logoimage {
     float: left;
-    margin-right: 15px;
+    margin-right: 1.25%;
+    max-width: 140px 105px;
+    min-width: 70px;
 }
 
 /* Horizontal inline navigation menu
@@ -124,7 +125,7 @@ h3 {
 }
 blockquote {
     font-style: italic;
-    margin-left: 20px;
+    margin-left: 1.666%;
     padding: 1em;
     border-left: 3px solid steelblue;
     background-color: #eeeeee;
@@ -185,9 +186,10 @@ aside li {
     list-style: none;
 }
 #nav_list ul li{
-    width: 90%;
+    width: 100%;
     border: 1px solid steelblue;
     margin:0 auto .5em;   
+    border-radius: 25px;
 }
 #nav_list ul li a{
     display: block;
@@ -196,13 +198,15 @@ aside li {
     background-color: lightsteelblue;
     padding: .5em 0 .5em .5em;
     color: black;
+    border-radius: 25px;
+    
 }
 #nav_list ul li a:hover{
     background-color: steelblue;
     color: white;
 }
 
-/* the style for the footer*/
+/* footer code */
 footer {
     clear: both;
     background-color: steelblue;
@@ -214,4 +218,60 @@ footer p {
     font-weight: bold;
     text-align: center;
     font-variant: small-caps;
+}
+/* Hide the mobilemenu*/
+#mobilemenu {
+    display: none;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 900px) {
+    body {
+        font-size: 90%;
+        box-shadow: none;
+    }   
+}
+
+@media only screen and (max-width: 767px) {
+    #nav_menu {
+        display: none;
+    }
+    #mobilemenu {
+        display: block;
+    }
+    .slicknav_menu {
+        background-color: steelblue !important;
+
+    }
+    header h2 {
+        font-size: 200%;
+    }
+    section, aside  {   
+        float: none;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 .5em;
+    }
+    .logoimage {
+        float: none;
+        padding: .5em;
+        display: block;
+        margin: 0 auto;
+    }
+    header {
+        margin: 0 auto;
+    }
+    header h2, header h3 {
+        clear: both;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 479px) {
+    header h2 {
+        font-size: 150%;
+    }
+    section p {
+        font-size: 80%;
+    }
+    
 }
