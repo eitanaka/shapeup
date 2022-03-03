@@ -39,6 +39,14 @@ header h2 {
     max-width: 140px 105px;
     min-width: 70px;
 }
+main h1 {
+    color: lightsteelblue;
+    font-size: 300%;
+    text-align: center;
+    margin: 10px 0 0;
+    font-variant: small-caps;
+    text-shadow: 1px 1px 2px black, -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black;
+}
 
 /* Horizontal inline navigation menu
 #nav_menu {
@@ -70,9 +78,10 @@ header h2 {
 }
 End nav_menu1*/
 
-/*  nav_menu 2 tier menu using block and float*/
+/*  nav_menu 2 tier menu using block and float
 #nav_menu {
     border-bottom: 2px solid steelblue;
+    background-color: steelblue;
 }
 #nav_menu ul {
     margin: 0;
@@ -105,13 +114,58 @@ End nav_menu1*/
 #nav_menu ul li:hover > ul {
     display: block;
 }
-#nav_menu > ul::after{
+#nav_menu > ul::after {
     content:"";
     clear: both;
     display: block;
 }
 #nav_menu ul li a:hover, #nav_menu ul li a:focus {
     background-color: lightsteelblue;
+}
+*/ 
+
+/* Horizontal Flex nav_menu */
+.container {
+    display: flex;
+    list-style: none;
+    background-color: steelblue;
+    position: relative;
+}
+.container li {
+    flex: 1;
+}
+.container li a {
+    display: block;
+    padding: .75em 1em;
+    text-decoration: none;
+    color: white;
+    background-color: steelblue;
+    font-weight: bold;
+    text-align: center;
+    transition: all .5s;
+}
+.container li a:hover {
+    background-color: lightsteelblue;
+    color: black;
+}
+.container ul {
+    display: none;
+    width: 20%;
+    list-style: none;
+    position: absolute; 
+    top: 100%;
+}
+.container ul li {
+    flex-direction: column;
+}
+.container ul li a{
+    text-align: left;
+    padding-left: 1em;
+    text-align: center;
+    transition: all .5s;
+}
+.container li:hover > ul {
+    display: block;
 }
 
 /* the style for main*/
@@ -124,6 +178,10 @@ h3 {
     font-size: 150%;
 }
 blockquote {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 120%;
+    width: 80%;
+    margin: 1em 0;
     font-style: italic;
     margin-left: 1.666%;
     padding: 1em;
@@ -229,11 +287,23 @@ footer p {
     body {
         font-size: 90%;
         box-shadow: none;
-    }   
+    }
+    main h1 {
+        font-size: 250%;
+    } 
+    #leftsidebar {
+        display: none;
+    }
+    section {
+        width: 60%;
+    }
 }
 
 @media only screen and (max-width: 767px) {
     #nav_menu {
+        display: none;
+    }
+    #leftsidebar {
         display: none;
     }
     #mobilemenu {
@@ -241,7 +311,6 @@ footer p {
     }
     .slicknav_menu {
         background-color: steelblue !important;
-
     }
     header h2 {
         font-size: 200%;
@@ -264,6 +333,9 @@ footer p {
     header h2, header h3 {
         clear: both;
         text-align: center;
+    }
+    main h1 {
+        font-size: 200%;
     }
 }
 @media only screen and (max-width: 479px) {
